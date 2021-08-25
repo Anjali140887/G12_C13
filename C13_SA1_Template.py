@@ -46,6 +46,7 @@ bird1=Bird()
     
 groundx=0
 score=0
+score_font=pygame.font.Font('freesansbold.ttf', 25)
 state="play"
 while True:
     screen.blit(images["bg1"],[0,0])
@@ -65,12 +66,15 @@ while True:
             if event.key == pygame.K_SPACE and state=="play":
                 bird1.flap()
     
-    if bird1.r.colliderect(pipe1.rbot) or bird1.r.colliderect(pipe1.rtop) or bird1.r.y>=590:
+    if bird1.bird.colliderect(pipe1.rbot) or bird1.bird.colliderect(pipe1.rtop) or bird1.bird.y>=590:
         state="over"
     
         
-    if pipe1.rtop.x == bird1.r.x:
+    if pipe1.rtop.x == bird1.bird.x:
         score=score+1
     
+    
+    score_text=score_font.render(str(score), False, (255,255,0))
+    screen.blit(score_text,[200,10])
     pygame.display.update()   
     clock.tick(30)
