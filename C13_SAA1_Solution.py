@@ -2,7 +2,7 @@ import pygame,sys,random
 pygame.init()
 clock=pygame.time.Clock()
 screen = pygame.display.set_mode((400,600))
-pygame.display.set_caption('Bird Game')
+pygame.display.set_caption('Infinite Flying Bird Game')
 images={}
 images["bg1"] = pygame.image.load("bg1.png").convert_alpha()
 images["base"] = pygame.image.load("base.png").convert_alpha()
